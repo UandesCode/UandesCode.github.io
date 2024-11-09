@@ -1,10 +1,10 @@
 ---
-
+const { link } = Astro.props;
 ---
 
 <a
   class="text-white flex items-center justify-center w-full gap-1 px-5 py-4 text-xl duration-300 md:w-auto md:py-2 md:text-base hover:scale-110 focus:scale-110"
-  href="#"
+  href=`${link}`
 >
   <slot />
 </a>
