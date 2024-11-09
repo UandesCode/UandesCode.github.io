@@ -1,0 +1,33 @@
+---
+import fetchRepos from "../../services/GHapi.ts";
+import RepoCard from "./RepoCard.astro";
+import type { RepoData } from "../../types/GHapi";
+
+const userName = import.meta.env.PUBLIC_GITHUB_USER;
+const token = import.meta.env.GH_TOKEN;
+const repos = await fetchRepos(userName, token);
+
+console.log(repos);
+---
+
+<h2 class="text-4xl font-semibold text-white text-center">
+  Nuestros Proyectos Destacados
+</h2>
+<div class="items-center justify-center flex">
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-12 max-w-6xl">
+    {
+      repos.map((repo: RepoData) => (
+        <RepoCard
+          name={repo.name}
+          description={repo.description}
+          url={repo.url}
+          createdAt={repo.createdAt}
+          updatedAt={repo.updatedAt}
+          openGraphImageUrl={repo.openGraphImageUrl}
+          usesCustomOpenGraphImage={repo.usesCustomOpenGraphImage}
+          homepageUrl={repo.homepageUrl}
+        />
+      ))
+    }
+  </div>
+</div>
