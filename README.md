@@ -2,6 +2,12 @@
 
 Inspirado en [open source UC](https://osuc.dev/), inicio este proyecto para que la comunidad de la UANDES tambien se motive a hacer cosas bacanes de codigo abiero, hecho por todos para todos.
 
+## Stack
+
+pnpm
+
+Astro con Typescript ~ Tailwind CSS
+
 ## Para correr el proyecto
 
 ```sh
