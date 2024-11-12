@@ -23,13 +23,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: "Create env file"
+      - name: Install, build, and upload your site
         run: |
           touch .env
           echo PUBLIC_GITHUB_USER=${{ secrets.PUBLIC_GITHUB_USER }} >> .env
           echo GH_TOKEN=${{ secrets.GH_TOKEN }} >> .env
           cat .env
-      - name: Install, build, and upload your site
         uses: withastro/action@v3
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
