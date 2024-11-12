@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   build:
+    env: PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
