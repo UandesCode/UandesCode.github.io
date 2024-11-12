@@ -31,9 +31,6 @@ jobs:
         # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
   deploy:
-    env:
-      PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     needs: build
     runs-on: ubuntu-latest
     environment:
