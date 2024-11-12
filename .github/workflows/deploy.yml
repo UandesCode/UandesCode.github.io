@@ -14,22 +14,17 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
 jobs:
   build:
+    env:
+      PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     runs-on: ubuntu-latest
     steps:
-      - name: print
-        run: echo "${{ secrets.PUBLIC_GITHUB_USER }}"
-      - name: echo
-        run: echo "$GH_TOKEN"
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        uses: withastro/action@v0
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
