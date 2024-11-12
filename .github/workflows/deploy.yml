@@ -26,7 +26,7 @@ jobs:
       - name: Install, build, and upload your site
         run: |
           touch .env
-          echo PUBLIC_GITHUB_USER=${{ secrets.PUBLIC_GITHUB_USER }} >> .env
+          echo PUBLIC_GITHUB_USER=UandesCode >> .env
           echo GH_TOKEN=${{ secrets.GH_TOKEN }} >> .env
           cat .env
         uses: withastro/action@v3
