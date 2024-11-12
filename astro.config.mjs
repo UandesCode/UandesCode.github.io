@@ -9,4 +9,5 @@ export default defineConfig({
   image: {
     domains: ["opengraph.githubassets.com/"],
   },
+  site: "https://UandesCode.github.io",
 });
