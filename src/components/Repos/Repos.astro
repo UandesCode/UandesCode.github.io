@@ -4,7 +4,7 @@ import RepoCard from "./RepoCard.astro";
 import type { RepoData } from "../../types/GHapi";
 
 const userName = import.meta.env.PUBLIC_GITHUB_USER;
-const token = import.meta.env.GH_TOKEN;
+const token = import.meta.env.SECRET_GH_TOKEN;
 const repos = await fetchRepos(userName, token);
 ---
 
