@@ -40,6 +40,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: read env
+        run: echo $PUBLIC_GITHUB_USER
+      - name: read env
+        run: echo $GH_TOKEN
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
