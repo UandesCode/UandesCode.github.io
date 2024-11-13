@@ -5,7 +5,6 @@ import type { RepoData } from "../../types/GHapi";
 
 const userName = import.meta.env.PUBLIC_GITHUB_USER;
 const token = import.meta.env.SECRET_GH_TOKEN;
-console.log("tessst", token, userName);
 const repos = await fetchRepos(userName, token);
 ---
 
