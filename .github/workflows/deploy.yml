@@ -27,6 +27,8 @@ jobs:
         run: echo "$PUBLIC_GITHUB_USER"
       - name: checkenv
         run: echo "$SECRET_GH_TOKEN"
+        - name: checkenv
+        run: echo ${{ secrets.SECRET_GH_TOKEN }}
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
