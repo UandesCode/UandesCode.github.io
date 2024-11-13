@@ -23,9 +23,9 @@ jobs:
       SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN }}
     runs-on: ubuntu-latest
     steps:
-      - name: check env
+      - name: checkenv
         run: echo $PUBLIC_GITHUB_USER
-      - name: check env
+      - name: checkenv
         run: echo $SECRET_GH_TOKEN
       - name: Checkout your repository using git
         uses: actions/checkout@v4
