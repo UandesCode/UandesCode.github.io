@@ -25,11 +25,6 @@ jobs:
     env:
       PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
       SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN }}
-    secrets:
-      SECRET_GH_TOKEN:
-        required: true
-      PUBLIC_GITHUB_USER:
-        required: true
     runs-on: ubuntu-latest
     steps:
       - name: checkenv
@@ -55,5 +50,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
+        with:
+          SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN
+          PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
         id: deployment
         uses: actions/deploy-pages@v4
