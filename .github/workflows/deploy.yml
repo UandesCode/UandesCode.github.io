@@ -34,6 +34,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        with:
+          SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN }}
+          PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
@@ -47,8 +50,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        with:
-          SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN }}
-          PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
+
         id: deployment
         uses: actions/deploy-pages@v4
