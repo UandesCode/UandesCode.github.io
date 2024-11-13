@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-        with:
+        env:
           SECRET_GH_TOKEN: ${{ secrets.SECRET_GH_TOKEN }}
           PUBLIC_GITHUB_USER: ${{ secrets.PUBLIC_GITHUB_USER }}
         # with:
